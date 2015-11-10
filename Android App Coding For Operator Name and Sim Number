@@ -38,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
                                 TextView txtbx = (TextView) findViewById(R.id.txtvw);
                                 TextView opnames = (TextView)findViewById(R.id.opname);
 
+                                  
+                                TelephonyManager tMgr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+
+                                String opsne = tMgr.getNetworkOperatorName();
+                                String Num = tMgr.getLine1Number();
+
                                       checkCallingOrSelfPermission(Manifest.permission.READ_PHONE_STATE) ;
                                 if(tMgr.getSubscriberId() == null){
 
